@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harbour Fish &amp; Chips — Saltford-on-Sea</title>
+<meta name="description" content="Family-run fish and chip takeaway on the seafront at Saltford-on-Sea. Fresh, hand-battered fish, proper chips, cooked daily. Call ahead for collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0c3856;
+    --navy-deep:#082638;
+    --white:#fdfbf3;
+    --paper:#f5efdc;
+    --mustard:#eea22e;
+    --mustard-deep:#d6890f;
+    --coral:#d64c3f;
+    --line:#0c385622;
+    --ink:#12293a;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Karla',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton',Impact,'Arial Narrow Bold',sans-serif;
+    font-weight:400;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    line-height:1.05;
+    color:var(--navy);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  /* ---------- example disclosure banner ---------- */
+  .example-banner{
+    background:var(--navy-deep);
+    color:var(--white);
+    font-size:13px;
+    letter-spacing:0.02em;
+    text-align:center;
+    padding:9px 16px;
+    border-bottom:2px solid var(--mustard);
+  }
+  .example-banner strong{color:var(--mustard);font-weight:700;}
+  .example-banner .badge-x{
+    display:inline-block;
+    margin-right:6px;
+    font-size:11px;
+    border:1px solid var(--mustard);
+    border-radius:20px;
+    padding:1px 8px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  /* ---------- header ---------- */
+  header.site{
+    background:var(--navy);
+    color:var(--white);
+    position:relative;
+    overflow:hidden;
+  }
+  .stripe-band{
+    height:10px;
+    background:repeating-linear-gradient(
+      90deg,
+      var(--mustard) 0 28px,
+      var(--white) 28px 56px
+    );
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-mark{
+    width:52px;height:52px;flex:none;
+  }
+  .brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+  }
+  .brand-text .name{
+    font-family:'Anton',sans-serif;
+    color:var(--white);
+    font-size:22px;
+    letter-spacing:0.03em;
+  }
+  .brand-text .place{
+    font-family:'Karla',sans-serif;
+    text-transform:none;
+    font-style:italic;
+    color:var(--mustard);
+    font-size:13px;
+    margin-top:3px;
+  }
+  nav.links{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    font-weight:700;
+  }
+  nav.links a{
+    text-decoration:none;
+    color:var(--white);
+    border-bottom:2px solid transparent;
+    padding-bottom:4px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  nav.links a:hover{border-color:var(--mustard);color:var(--mustard);}
+  .nav-phone{
+    background:var(--mustard);
+    color:var(--navy-deep);
+    font-weight:700;
+    padding:9px 16px;
+    border-radius:3px;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+  .nav-phone:hover{background:var(--mustard-deep);}
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:var(--white);
+    position:relative;
+    padding:64px 0 0;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+    padding-bottom:70px;
+  }
+  .hero-kicker{
+    display:inline-block;
+    background:var(--coral);
+    color:var(--white);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:2px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(38px,6vw,64px);
+    margin:0 0 16px;
+  }
+  .hero h1 span{color:var(--mustard);}
+  .hero p.lede{
+    font-size:19px;
+    max-width:46ch;
+    color:#e7eef3;
+    margin:0 0 28px;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    border-radius:3px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:15px;
+    letter-spacing:0.02em;
+    border:2px solid transparent;
+  }
+  .btn-primary{background:var(--mustard);color:var(--navy-deep);}
+  .btn-primary:hover{background:var(--mustard-deep);}
+  .btn-outline{border-color:var(--white);color:var(--white);}
+  .btn-outline:hover{background:var(--white);color:var(--navy);}
+  .hero-badge-card{
+    background:var(--paper);
+    color:var(--navy-deep);
+    border-radius:6px;
+    padding:26px;
+    box-shadow:0 18px 40px -18px #00000066;
+    transform:rotate(1.2deg);
+    border:1px solid #00000010;
+  }
+  .hero-badge-card .stars{color:var(--coral);font-size:18px;letter-spacing:2px;}
+  .hero-badge-card h3{font-size:15px;margin:10px 0 8px;color:var(--navy-deep);}
+  .hero-badge-card p{margin:0;font-size:15px;font-style:italic;}
+  .hero-badge-card .who{
+    display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:13px;
+    text-transform:uppercase;letter-spacing:0.05em;color:var(--navy-deep);
+  }
+  .wave{display:block;width:100%;line-height:0;}
+  /* ---------- sections ---------- */
+  section{padding:72px 0;}
+  .section-head{max-width:640px;margin:0 0 40px;}
+  .section-head .eyebrow{
+    display:block;
+    color:var(--coral);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(28px,4vw,40px);margin:0 0 14px;}
+  .section-head p{color:#4a5c68;font-size:17px;margin:0;}
+  /* about */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:48px;
+    align-items:center;
+  }
+  .about-panel{
+    background:var(--navy);
+    border-radius:6px;
+    padding:34px;
+    color:var(--white);
+  }
+  .about-panel .figure{
+    font-family:'Anton',sans-serif;
+    font-size:52px;
+    color:var(--mustard);
+    line-height:1;
+  }
+  .about-panel .figure-label{
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-size:13px;
+    color:#c9d7e0;
+    margin-top:6px;
+    display:block;
+  }
+  .about-panel hr{border:none;border-top:1px solid #ffffff2a;margin:22px 0;}
+  .about-text p{color:#33454f;font-size:17px;}
+  .about-text p+p{margin-top:14px;}
+  /* menu */
+  .menu-board{
+    background:var(--navy-deep);
+    border-radius:8px;
+    padding:44px clamp(20px,5vw,52px);
+    position:relative;
+    border:6px solid var(--navy);
+  }
+  .menu-board::before{
+    content:"";
+    position:absolute;inset:10px;
+    border:1px dashed #eea22e55;
+    border-radius:3px;
+    pointer-events:none;
+  }
+  .menu-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px 56px;
+  }
+  .menu-group h3{
+    color:var(--mustard);
+    font-size:19px;
+    border-bottom:2px solid #ffffff22;
+    padding-bottom:10px;
+    margin:0 0 14px;
+  }
+  .menu-item{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    color:var(--white);
+    padding:8px 0;
+    border-bottom:1px dotted #ffffff2a;
+    font-size:15.5px;
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item .desc{color:#b9c8d2;font-size:13px;display:block;margin-top:2px;font-style:italic;}
+  .menu-item .price{
+    color:var(--mustard);
+    font-weight:700;
+    white-space:nowrap;
+    font-family:'Karla',sans-serif;
+  }
+  .specials-strip{
+    margin-top:34px;
+    background:var(--coral);
+    border-radius:5px;
+    padding:18px 22px;
+    display:flex;
+    gap:16px;
+    align-items:baseline;
+    flex-wrap:wrap;
+    color:var(--white);
+  }
+  .specials-strip .tag{
+    font-family:'Anton',sans-serif;
+    font-size:14px;
+    letter-spacing:0.06em;
+    background:var(--white);
+    color:var(--coral);
+    padding:3px 10px;
+    border-radius:3px;
+  }
+  .specials-strip span.item{font-weight:700;}
+  .specials-strip span.item small{font-weight:400;opacity:.9;}
+  /* reviews */
+  .reviews-band{background:var(--paper);}
+  .reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .review-card{
+    background:var(--white);
+    border-radius:6px;
+    padding:22px;
+    border:1px solid #0c385618;
+    box-shadow:0 10px 24px -18px #0c385640;
+  }
+  .review-card .stars{color:var(--coral);font-size:15px;letter-spacing:2px;margin-bottom:10px;}
+  .review-card p{font-size:14.5px;color:#33454f;margin:0 0 14px;}
+  .review-card .who{
+    font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--navy);
+  }
+  /* hours + location */
+  .info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  .info-card{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:6px;
+    padding:32px;
+  }
+  .info-card h3{color:var(--mustard);font-size:18px;margin:0 0 18px;}
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px solid #ffffff1c;
+    font-size:15px;
+  }
+  .hours-row:last-child{border-bottom:none;}
+  .hours-row .day{font-weight:700;}
+  .hours-row .closed{color:#ff9d90;}
+  .locate-card{
+    background:var(--white);
+    border:1px solid #0c385622;
+    border-radius:6px;
+    padding:32px;
+  }
+  .locate-card h3{font-size:18px;margin:0 0 18px;color:var(--navy);}
+  .locate-line{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    margin-bottom:16px;
+    font-size:15.5px;
+  }
+  .locate-line svg{flex:none;margin-top:2px;color:var(--coral);}
+  .locate-line a{text-decoration:none;font-weight:700;color:var(--navy-deep);}
+  .map-swatch{
+    margin-top:20px;
+    border-radius:5px;
+    height:130px;
+    background:
+      repeating-linear-gradient(45deg, #0c38561a 0 2px, transparent 2px 14px),
+      linear-gradient(135deg,#dce8ee,#c7dbe5);
+    border:1px dashed #0c385644;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--navy-deep);
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    text-align:center;
+    padding:10px;
+  }
+  /* order CTA */
+  .order-band{
+    background:var(--mustard);
+    color:var(--navy-deep);
+    text-align:center;
+  }
+  .order-band h2{color:var(--navy-deep);font-size:clamp(26px,4vw,38px);margin:0 0 14px;}
+  .order-band p{max-width:56ch;margin:0 auto 28px;font-size:17px;color:#3a2c0f;}
+  .order-band .btn-primary{background:var(--navy);color:var(--white);}
+  .order-band .btn-primary:hover{background:var(--navy-deep);}
+  .order-band .cta-row{justify-content:center;}
+  /* footer */
+  footer.site{
+    background:var(--navy-deep);
+    color:#c9d7e0;
+    padding:44px 0 30px;
+    font-size:14px;
+  }
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+    border-bottom:1px solid #ffffff1c;
+    padding-bottom:24px;
+    margin-bottom:20px;
+  }
+  .foot-brand{color:var(--white);font-family:'Anton',sans-serif;font-size:18px;letter-spacing:0.03em;}
+  .foot-note{color:#8ea3af;font-size:13px;line-height:1.7;}
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    font-size:12.5px;
+    color:#8ea3af;
+  }
+  .foot-bottom .stride-credit{color:#eea22e;}
+  /* responsive */
+  @media (max-width:880px){
+    .hero-inner{grid-template-columns:1fr;padding-bottom:50px;}
+    .hero-badge-card{transform:none;order:-1;}
+    .about-grid{grid-template-columns:1fr;}
+    .menu-cols{grid-template-columns:1fr;}
+    .reviews-grid{grid-template-columns:1fr 1fr;}
+    .info-grid{grid-template-columns:1fr;}
+    nav.links{order:3;width:100%;justify-content:flex-start;}
+  }
+  @media (max-width:560px){
+    .reviews-grid{grid-template-columns:1fr;}
+    .nav-row{flex-direction:column;align-items:flex-start;}
+    .nav-phone{align-self:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="example-banner">
+  <span class="badge-x">Example</span>
+  This is a fictional demonstration site built by <strong>STRIDE</strong> to show prospective customers what a real build looks like. Harbour Fish &amp; Chips is not a real business.
+</div>
+
+<header class="site">
+  <div class="stripe-band"></div>
+  <div class="wrap nav-row">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="31" fill="#fdfbf3" stroke="#eea22e" stroke-width="2"/>
+        <path d="M14 34c6-14 30-14 36 0-6 3-10 5-18 5s-12-2-18-5Z" fill="#0c3856"/>
+        <circle cx="24" cy="32" r="2.4" fill="#fdfbf3"/>
+        <path d="M40 27c4 1.5 6 4 8 7-2 3-4 5.5-8 7 2-3.4 3-4.6 3-7s-1-3.6-3-7Z" fill="#d64c3f"/>
+        <path d="M12 46c8 4 32 4 40 0" stroke="#eea22e" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <span class="name">Harbour Fish &amp; Chips</span>
+        <span class="place">Saltford-on-Sea, est. 1978</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#hours">Hours &amp; Location</a>
+    </nav>
+    <a class="nav-phone" href="tel:01632962789">Call 01632 962789</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="hero-kicker">Fresh off the fryer, daily</span>
+      <h1>Proper fish &amp; chips, <span>straight from the seafront</span></h1>
+      <p class="lede">Three generations of hand-battered fish, twice-cooked chips and old-fashioned service, served two minutes from Saltford-on-Sea harbour wall.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:01632962789">Call to order collection</a>
+        <a class="btn btn-outline" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <div class="hero-badge-card">
+      <div class="stars">★★★★★</div>
+      <h3>"Best chips on the seafront"</h3>
+      <p>Crispy batter, chips done just right — we always stop here after a walk along the harbour.</p>
+      <span class="who">Sarah, Saltford-on-Sea</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,30 C150,60 350,0 600,25 C850,50 1050,5 1200,30 L1200,60 L0,60 Z" fill="#fdfbf3"></path>
+  </svg>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-panel">
+      <span class="figure">48</span>
+      <span class="figure-label">Years on the harbour front</span>
+      <hr>
+      <span class="figure">7</span>
+      <span class="figure-label">Days a week, rain or shine</span>
+      <hr>
+      <span class="figure">0</span>
+      <span class="figure-label">Freezers between boat and fryer*</span>
+    </div>
+    <div class="about-text">
+      <span class="hero-kicker" style="background:var(--navy);">Our story</span>
+      <h2 style="margin:16px 0 16px;">Family-run since 1978</h2>
+      <p>Harbour Fish &amp; Chips has been serving Saltford-on-Sea from the same spot on Harbour Parade since 1978, when the Marsh family first opened its doors to fishermen coming off the early boats. Three generations later, it's still a family business — same recipe for the batter, same care taken over the chips, same view of the harbour from the counter.</p>
+      <p>We keep things simple: quality potatoes, properly sourced fish, sunflower oil changed regularly, and nothing sitting around under a heat lamp. It's the kind of chippy you hope to find in a seaside town — and the kind of place regulars have been bringing their kids, and then their grandkids, to for decades.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">On the menu</span>
+      <h2>Chalkboard classics</h2>
+      <p>Everything's cooked to order in small batches throughout service, so there may be a short wait at busy times — always worth it.</p>
+    </div>
+    <div class="menu-board">
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h3>Fish &amp; Chips</h3>
+          <div class="menu-item"><span>Cod &amp; Chips<span class="desc">Hand-battered, served with a slice of lemon</span></span><span class="price">£8.50</span></div>
+          <div class="menu-item"><span>Haddock &amp; Chips<span class="desc">A Saltford favourite</span></span><span class="price">£8.90</span></div>
+          <div class="menu-item"><span>Scampi &amp; Chips</span><span class="price">£8.20</span></div>
+          <div class="menu-item"><span>Battered Sausage &amp; Chips</span><span class="price">£5.50</span></div>
+          <div class="menu-item"><span>Fish Cake &amp; Chips</span><span class="price">£5.80</span></div>
+          <div class="menu-item"><span>Steak &amp; Ale Pie &amp; Chips</span><span class="price">£6.90</span></div>
+        </div>
+        <div class="menu-group">
+          <h3>Sides</h3>
+          <div class="menu-item"><span>Chips</span><span class="price">£3.20</span></div>
+          <div class="menu-item"><span>Small Chips</span><span class="price">£2.40</span></div>
+          <div class="menu-item"><span>Mushy Peas</span><span class="price">£1.80</span></div>
+          <div class="menu-item"><span>Curry Sauce</span><span class="price">£1.50</span></div>
+          <div class="menu-item"><span>Gravy</span><span class="price">£1.50</span></div>
+          <div class="menu-item"><span>Pickled Onion</span><span class="price">£1.00</span></div>
+          <h3 style="margin-top:26px;">Kids' Portions</h3>
+          <div class="menu-item"><span>Kids' Fish &amp; Chips</span><span class="price">£5.00</span></div>
+          <div class="menu-item"><span>Kids' Sausage &amp; Chips</span><span class="price">£4.50</span></div>
+        </div>
+      </div>
+      <div class="specials-strip">
+        <span class="tag">Today's Specials</span>
+        <span class="item">Friday: Extra-Large Cod Special <small>with chips &amp; mushy peas</small> — £9.50</span>
+        <span class="item">Monday: Fish Cake &amp; Chips <small>with curry sauce</small> — £6.50</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews-band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What people say</span>
+      <h2>Reviews from the harbour</h2>
+      <p>A few words from regulars and visitors passing through Saltford-on-Sea.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Best chips on the seafront, hands down. Crispy batter, chips done just right — we always stop here after a walk along the harbour."</p>
+        <div class="who">Sarah</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Been coming here since I was a kid. Still family-run, still brilliant. The mushy peas are the best in Saltford."</p>
+        <div class="who">Dave</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Quick, friendly, and the fish is always fresh. The Sunday evening special is unbeatable — worth timing your walk around."</p>
+        <div class="who">A regular customer</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Took the grandkids for their first proper fish and chips by the sea. Portions were generous and the staff couldn't have been nicer."</p>
+        <div class="who">Margaret</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap info-grid">
+    <div class="info-card">
+      <h3>Opening Hours</h3>
+      <div class="hours-row"><span class="day">Monday</span><span>11:30–14:00, 16:30–20:00</span></div>
+      <div class="hours-row"><span class="day">Tuesday</span><span>11:30–14:00, 16:30–20:00</span></div>
+      <div class="hours-row"><span class="day">Wednesday</span><span class="closed">Closed</span></div>
+      <div class="hours-row"><span class="day">Thursday</span><span>11:30–14:00, 16:30–20:00</span></div>
+      <div class="hours-row"><span class="day">Friday</span><span>11:30–14:00, 16:30–21:00</span></div>
+      <div class="hours-row"><span class="day">Saturday</span><span>11:30–21:00</span></div>
+      <div class="hours-row"><span class="day">Sunday</span><span>12:00–19:00</span></div>
+    </div>
+    <div class="locate-card">
+      <h3>Find Us</h3>
+      <div class="locate-line">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span>3 Harbour Parade,<br>Saltford-on-Sea, SF1 2QY</span>
+      </div>
+      <div class="locate-line">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0-.6.4-1 1-1h3.2c.5 0 .9.3 1 .8l1 3.7c.1.4 0 .9-.4 1.2L7.6 11a15 15 0 0 0 6.4 6.4l1.3-2.2c.3-.4.8-.5 1.2-.4l3.7 1c.5.1.8.5.8 1V20c0 .6-.4 1-1 1h-1C10.6 21 4 14.4 4 6V5Z"/></svg>
+        <a href="tel:01632962789">01632 962789</a>
+      </div>
+      <div class="map-swatch">Harbour Parade · Saltford-on-Sea Seafront</div>
+    </div>
+  </div>
+</section>
+
+<section class="order-band">
+  <div class="wrap">
+    <h2>Hungry? Here's how to order</h2>
+    <p>No app, no faff — just give us a call and we'll have your order hot, wrapped and ready for collection. Walk-ins are always welcome too, especially with a sea view while you wait.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:01632962789">Call 01632 962789</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Harbour Fish &amp; Chips</div>
+        <p class="foot-note">3 Harbour Parade, Saltford-on-Sea, SF1 2QY<br>01632 962789</p>
+      </div>
+      <p class="foot-note" style="max-width:360px;">Fictional business created solely as a demonstration build. Any resemblance to a real chip shop is coincidental — the phone number and postcode format used here are reserved for fictional use.</p>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Harbour Fish &amp; Chips, Saltford-on-Sea (example content).</span>
+      <span class="stride-credit">Speculative example built by STRIDE — stridetechnology.co.uk</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
