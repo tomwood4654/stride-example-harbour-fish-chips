@@ -150,9 +150,27 @@
     background:var(--navy);
     color:var(--white);
     position:relative;
+    overflow:hidden;
     padding:64px 0 0;
   }
+  .hero-bg-photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(155deg, rgba(12,56,86,0.88) 0%, rgba(8,38,56,0.88) 100%);
+    z-index:1;
+  }
   .hero-inner{
+    position:relative;
+    z-index:2;
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
     gap:40px;
@@ -216,7 +234,7 @@
     display:block;margin-top:10px;font-style:normal;font-weight:700;font-size:13px;
     text-transform:uppercase;letter-spacing:0.05em;color:var(--navy-deep);
   }
-  .wave{display:block;width:100%;line-height:0;}
+  .wave{display:block;width:100%;line-height:0;position:relative;z-index:3;}
   /* ---------- sections ---------- */
   section{padding:72px 0;}
   .section-head{max-width:640px;margin:0 0 40px;}
@@ -493,6 +511,7 @@
 </header>
 
 <section class="hero">
+  <img class="hero-bg-photo" src="https://images.pexels.com/photos/32675843/pexels-photo-32675843.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Scenic view of a harbour with moored boats at dawn" loading="eager">
   <div class="wrap hero-inner">
     <div>
       <span class="hero-kicker">Fresh off the fryer, daily</span>
